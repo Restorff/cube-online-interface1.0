@@ -1,4 +1,4 @@
-# cube-online
+# cube-online1.0
 
 #### 介绍
 魔方比赛系统。
