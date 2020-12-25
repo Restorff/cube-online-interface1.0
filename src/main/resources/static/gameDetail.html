@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gameDetail</title>
+    <!--字体图标-->
+    <link href="javaex/pc/css/icomoon.css" rel="stylesheet" />
+    <!--动画-->
+    <link href="javaex/pc/css/animate.css" rel="stylesheet" />
+    <!--骨架样式-->
+    <link href="javaex/pc/css/common.css" rel="stylesheet" />
+    <!--皮肤（缇娜）-->
+    <link href="javaex/pc/css/skin/tina.css" rel="stylesheet" />
+    <!--jquery，不可修改版本-->
+    <script src="javaex/pc/lib/jquery-1.7.2.min.js"></script>
+    <!--全局动态修改-->
+    <script src="javaex/pc/js/common.js"></script>
+    <!--核心组件-->
+    <script src="javaex/pc/js/javaex.min.js"></script>
+    <!--表单验证-->
+    <script src="javaex/pc/js/javaex-formVerify.js"></script>
+</head>
+<style>
+    .welcome {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        margin-top: 10px;
+    }
+    
+    .xiangmu {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        margin-left: 200px;
+    }
+    
+    .submit {
+        margin-left: 200px;
+    }
+    
+    .tab-title {
+        margin-top: 40px;
+    }
+</style>
+
+<body>
+
+    <!--全部主体内容-->
+    <div class="list-content">
+
+        <!--块元素-->
+        <div class="block">
+            <!--正文内容-->
+            <div class="main">
+                <!--选项卡切换-->
+                <div id="tab" class="tab">
+                    <div class="welcome">
+                        欢迎来到CubeOnline比赛系统
+                    </div>
+
+                    <!--选项卡标题部分-->
+                    <div class="tab-title">
+                        <!--可以为选项卡添加图标、大标题、链接-->
+                        <img class="mod-icon" src="http://img.javaex.cn/dm.png" />
+                        <em><a href="#" target="_blank">&emsp;&emsp;&emsp;&emsp;<i style="color:#ccc">></i></a></em>
+                        <ul>
+
+                            <li><button class="button blue"><span class="icon-plus"></span> 可选项目</button></li>
+                            <li><button class="button yellow"><span class="icon-close1"></span>已选项目</button></li>
+                            <li><button class="button green"><span class="icon-check1"></span> 赛程</button></li>
+                            <li><button class="button red"><span class="icon-check2"></span> 比赛规则</button></li>
+                            <li><button class="button navy"><span class="icon-check2"></span> 赛果</button></li>
+
+                            <!--可以为选项卡右上角添加链接-->
+                            <a class="more" href="#" target="_blank">个人中心</a>
+                            <span class="clearfix"></span>
+                        </ul>
+                    </div>
+                    <!--选项卡内容部分-->
+                    <div class="tab-content">
+                        <div class="choose">
+                            <form id="form">
+                                <div class="box xiangmu">
+                                    <label zoom="2"><input type="checkbox" class="fill"  value="0"  id="c_2"/> &nbsp;二阶</label>&nbsp;
+                                    <label zoom="2"><input type="checkbox" class="fill"  value="0"  id="c_3"/> &nbsp;三阶</label>&nbsp;
+                                    <label zoom="2"><input type="checkbox" class="fill"  value="0"  id="c_4"/> &nbsp;四阶</label>
+                                    <br>
+                                    <label zoom="2"><input type="checkbox" class="fill"  value="0"  id="c_oh"/> &nbsp;三单</label>&nbsp;
+                                    <label zoom="2"><input type="checkbox" class="fill"  value="0"  id="c_sk"/> &nbsp;斜转</label>&nbsp;
+                                    <label zoom="2"><input type="checkbox" class="fill"  value="0"  id="c_py"/> &nbsp;塔</label>&nbsp;
+                                </div>
+                            </form>
+                            <div class="submit">
+                                <button class="button blue radius-8">确定</button>
+                            </div>
+                        </div>
+
+                        <div class="checked">
+                            <form id="form">
+                                <div class="box xiangmu">
+                                    <label zoom="2"><input type="checkbox" class="fill"  value="0"  id="c_2" checked/> &nbsp;二阶</label>&nbsp;
+                                    <label zoom="2"><input type="checkbox" class="fill"  value="0"  id="c_3" checked/> &nbsp;三阶</label>&nbsp;
+                                    <label zoom="2"><input type="checkbox" class="fill"  value="0"  id="c_4" checked/> &nbsp;四阶</label>
+                                    <br>
+                                    <label zoom="2"><input type="checkbox" class="fill"  value="0"  id="c_sk" checked/> &nbsp;斜转</label>&nbsp;
+                                    <label zoom="2"><input type="checkbox" class="fill"  value="0"  id="c_py" checked/> &nbsp;塔</label>&nbsp;
+                                </div>
+                            </form>
+                            <div class="submit">
+                                <button class="button blue radius-8">确定</button>
+                            </div>
+                        </div>
+
+                        <div><img src="https://i.loli.net/2020/09/30/2GbCwRSvkxHIQMj.png" /></div>
+                        <div><a href="https://www.worldcubeassociation.org/regulations/translations/chinese/">详细比赛规则请点击</a></div>
+                        <div><a href="gameResults.html">点击跳转到赛果界面</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        javaex.tab({
+            id: "tab", // tab的id
+            current: 1, // 默认选中第几个选项卡
+            mode: "mouseover", // 鼠标移动切换选项卡
+            // 切换选项卡后返回一个对象，包含选项卡的索引，从1开始计
+            // 初始化会自动执行一次
+            callback: function(rtn) {
+                console.log(rtn.index);
+            }
+        });
+    </script>
+
+    <script>
+        $(function() {
+            $(".fill").click(function() {
+                if (this.value == 0) {
+                    this.value = 1;
+                } else {
+                    this.value = 0;
+                }
+            })
+            $(".button").click(function() {
+                $.ajax({
+                    url: 'contestant//apply_json',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: '{"username":"${username}","c_2":' + $("#c_2").val() + ',"c_3":' + $("#c_3").val() + ',"c_4":' + $("#c_4").val() + ',"c_oh":' + $("#c_oh").val() + ',"c_sk":' + $("#c_sk").val() + ',"c_py":' + $("#c_py").val() + '}',
+                    contentType: 'application/json;charset=utf-8',
+                    success: function(res) {
+                        if (res.type === 'success') {
+                            alert("报名成功");
+                            window.location.href = 'contestant/center?name=${name}';
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

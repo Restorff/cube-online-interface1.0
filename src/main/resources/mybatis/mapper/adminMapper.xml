@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lstf666.cube.mapper.AdminMapper">
+
+
+    <!--配置查询所有-->
+    <!--<select id="方法名" resultType="全限定类名">-->
+    <!--</select>-->
+
+    <!--根据用户名查询管理员是否存在-->
+    <select id="queryAdminByUsername" resultType="Admin">
+        select * from admin where username = #{username};
+    </select>
+
+    <!--根据邮箱查询管理员是否存在-->
+    <select id="queryAdminByEmail" resultType="Admin">
+        select * from admin where email = #{email};
+    </select>
+
+    <!--管理员登录-->
+    <select id="login" resultType="cn.lstf666.cube.model.Admin">
+        select * from admin where username = #{username} and password = #{password};
+    </select>
+
+    <!--查看正在进行的所有比赛-->
+    <select id="checkGame" resultType="Competition">
+        select cId,name from competition
+    </select>
+
+    <!--得到一场比赛对象-->
+    <select id="getOneGame" resultType="Competition">
+         select * from competition where cId = #{cId}
+    </select>
+
+
+    <!--管理员注册-->
+    <insert id="register" parameterType="admin">
+        insert into admin (username,password,qqNumber,email,phoneNumber,sex,code)
+        values (#{username},#{password}, #{qqNumber},#{email},#{phoneNumber},#{sex},#{code});
+    </insert>
+
+    <!--添加一条成绩-->
+    <insert id="addAnResult5" parameterType="result5">
+        insert into result_5 (cId,pId,name,event,rounds,t1,t2,t3,t4,t5,single,avg)
+        values (#{cId},#{pId}, #{name},#{event},#{rounds},#{t1},#{t2},#{t3},#{t4},#{t5},#{single},#{avg})
+    </insert>
+
+    <!--更新一条成绩-->
+    <update id="changeAnResult5">
+        update result_5 set t1 = #{t1} , t2 = #{t2}, t3 = #{t3} , t4 = #{t4}, t5 = #{t5} ,
+        single = #{single } , avg = #{avg} where cId=#{cId} and pId=#{pId} and event=#{event}
+        and name=#{name} and rounds=#{rounds} ;
+    </update>
+
+
+    <!--删除一条成绩-->
+    <delete id="deleteAnResult5">
+        delete from result_5 where rId = #{rId};
+    </delete>
+
+
+    <select id="getIds" resultType="java.lang.Integer">
+        select pId from apply where cId = #{cId}
+    </select>
+    <select id="getOnePlayer" resultType="cn.lstf666.cube.model.Player">
+        select * from play where pId = #{pId}
+    </select>
+    <select id="getResult5List" resultType="cn.lstf666.cube.model.Result5">
+        select * from result_5 where pId = #{pId} and cId = #{cId}
+    </select>
+    <select id="getScores" resultType="Result5">
+        select * from result_5 where cId = #{cId} and event= #{event} and rounds = #{rounds}
+        order by  avg asc
+    </select>
+    <select id="getRounds" resultType="java.lang.Integer">
+        select ${event} from competition where cId = #{cId}
+    </select>
+    <select id="getNameById" resultType="java.lang.String">
+        select name from play where pId = #{pId}
+    </select>
+    <select id="getIdByName" resultType="java.lang.Integer">
+        select pId from play where name = #{name}
+    </select>
+    <select id="checkScore" resultType="cn.lstf666.cube.model.Result5">
+        select * from result_5 where pId = #{pId} and event = #{event} and rounds = #{rounds}
+    </select>
+    <select id="getOneScore" resultType="cn.lstf666.cube.model.Result5">
+        select * from result_5 where rId = #{rId}
+    </select>
+    <select id="getApplyList" resultType="cn.lstf666.cube.model.Apply">
+        select * from apply where cId = #{cId} and pId = #{pId}
+    </select>
+
+</mapper>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cube-online:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>cube-online</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Cube-Online.war">
+      <element id="artifact" artifact-name="cube-online:war exploded" />
+    </root>
+  </artifact>
+</component>

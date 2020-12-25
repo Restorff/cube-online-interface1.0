@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>五次成绩列表</title>
+    <!--字体图标-->
+    <link href="javaex/pc/css/icomoon.css" rel="stylesheet" />
+    <!--动画-->
+    <link href="javaex/pc/css/animate.css" rel="stylesheet" />
+    <!--骨架样式-->
+    <link href="javaex/pc/css/common.css" rel="stylesheet" />
+    <!--皮肤（缇娜）-->
+    <link href="javaex/pc/css/skin/tina.css" rel="stylesheet" />
+    <!--jquery，不可修改版本-->
+    <script src="javaex/pc/lib/jquery-1.7.2.min.js"></script>
+    <!--全局动态修改-->
+    <script src="javaex/pc/js/common.js"></script>
+    <!--核心组件-->
+    <script src="javaex/pc/js/javaex.min.js"></script>
+    <!--表单验证-->
+    <script src="javaex/pc/js/javaex-formVerify.js"></script>
+</head>
+<!--主体内容-->
+<div class="list-content">
+        <div class="block">
+            <h2><span class="event"></span>第X轮</h2>
+            <div class="main">
+                <div class="operation-wrap">
+                    <div class="buttons-wrap">
+                        <button class="button blue radius-3 add_3" value="3"><span class="icon-plus"></span> 添加</button>
+                        <button class="button red radius-3 delete" value="3"><span class="icon-close2"></span> 删除</button>
+                        <button class="button green radius-3 update" value="3"><span class="icon-check2"></span> 修改</button>
+                    </div>
+                </div>
+                <table id="table——3" class="table color2 th-center td-center">
+                    <thead>
+                    <tr>
+                        <th class="checkbox"><input type="checkbox" class="fill listen-3" /> </th>
+                        <th>排名</th>
+                        <th>id</th>
+                        <th>选手</th>
+                        <th>最好</th>
+                        <th>平均</th>
+                        <th>详情1</th>
+                        <th>详情2</th>
+                        <th>详情3</th>
+                        <th>详情4</th>
+                        <th>详情5</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td class="checkbox"><input type="checkbox" class="fill listen-3-2 c1" value="${item.id}"/> </td>
+                                <td>${status.count}</td>
+                                <td>${item.cid}</td>
+                                <td>${item.name}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                            </tr>
+                            <tr>
+                                <td class="checkbox"><input type="checkbox" class="fill listen-3-2 c1" value="${item.id}"/> </td>
+                                <td>${status.count}</td>
+                                <td>${item.cid}</td>
+                                <td>${item.name}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                            </tr>
+                            <tr>
+                                <td class="checkbox"><input type="checkbox" class="fill listen-3-2 c1" value="${item.id}"/> </td>
+                                <td>${status.count}</td>
+                                <td>${item.cid}</td>
+                                <td>${item.name}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                                <td>${item.single}</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</html>

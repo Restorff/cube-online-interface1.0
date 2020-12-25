@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lstf666.cube.mapper.PlayMapper">
+    <!--根据用户名查询选手信息-->
+    <select id="queryPlayerByUsername" resultType="cn.lstf666.cube.model.Player" parameterType="String">
+        select * from play where username = #{username};
+    </select>
+    <!--根据邮箱查询选手信息-->
+    <select id="queryPlayerByEmail" resultType="cn.lstf666.cube.model.Player" parameterType="String">
+        select * from play where email = #{email};
+    </select>
+    <!--根据code查询选手-->
+    <select id="queryPlayerByCode" resultType="cn.lstf666.cube.model.Player">
+         select * from play where code = #{code};
+    </select>
+    <select id="querycIdBypId" resultType="java.lang.Integer" parameterType="integer">
+        select cId from apply where pId = #{pId};
+    </select>
+    <!--根据id查询选手-->
+    <select id="queryPlayerByPId" resultType="cn.lstf666.cube.model.Player">
+        select * from play where pId = #{pId};
+    </select>
+    <!--查询选手报名项目-->
+    <select id="queryApplyByCidAndPid" resultType="cn.lstf666.cube.model.Apply">
+        select * from apply where cId = #{cId} and pId = #{pId}
+    </select>
+    <!--查询比赛结果-->
+    <select id="queryAllResult" resultType="cn.lstf666.cube.model.Result5">
+        select * from result_5 where cId = #{cId} and event = #{event} and rounds = #{rounds} order by avg;
+    </select>
+    <!--查询个人赛果-->
+    <select id="queryMyResult" resultType="cn.lstf666.cube.model.Result5">
+        select * from result_5 where cId = #{cId} and event = #{event} and rounds = #{rounds} and pId = #{pId};
+    </select>
+    <select id="findApplyById" resultType="cn.lstf666.cube.model.Apply">
+        select * from apply where aId = #{aId};
+    </select>
+    <!--选手注册-->
+    <insert id="register" parameterType="player">
+        insert into play (name,username,password,email,code) values (#{name},#{username},#{password},
+        #{email},#{code});
+    </insert>
+    <!--报名比赛-->
+    <insert id="chooseEvent">
+        insert into apply value (null,#{cId},#{pId},#{e222},#{e333},#{e444},#{e555},
+        #{e666},#{e777},#{e333bf},#{e333oh},#{e333fm},
+        #{eclock},#{eminx},#{epyram},#{eskewb},#{esq1},#{e444bf},
+        #{e555bf},#{e333mbf});
+    </insert>
+    <!--激活选手账号-->
+    <update id="active">
+         update play set status = 'y' where pId = #{pId};
+    </update>
+    <update id="updateCompetion" parameterType="competition">
+        update competition set nowNum = #{nowNum} where cId = #{cId};
+    </update>
+    <update id="updateApply">
+        update apply set e222 = #{e222},e333 = #{e333},e444 = #{e444},e555 = #{e555},e666 = #{e666},
+        e777 = #{e777},e333bf = #{e333bf},e333oh = #{e333oh},e333fm = #{e333fm},eclock = #{eclock},eminx = #{eminx},
+        epyram = #{epyram},eskewb = #{eskewb},esq1 = #{esq1},e444bf = #{e444bf},e555bf = #{e555bf},e333mbf = #{e333mbf} where aId = #{aId}
+    </update>
+</mapper>

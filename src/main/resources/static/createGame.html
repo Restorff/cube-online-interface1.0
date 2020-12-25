@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建比赛</title>
+     <!--字体图标-->
+     <link href="javaex/pc/css/icomoon.css" rel="stylesheet" />
+     <!--动画-->
+     <link href="javaex/pc/css/animate.css" rel="stylesheet" />
+     <!--骨架样式-->
+     <link href="javaex/pc/css/common.css" rel="stylesheet" />
+     <!--皮肤（缇娜）-->
+     <link href="javaex/pc/css/skin/tina.css" rel="stylesheet" />
+     <!--jquery，不可修改版本-->
+     <script src="javaex/pc/lib/jquery-1.7.2.min.js"></script>
+     <!--全局动态修改-->
+     <script src="javaex/pc/js/common.js"></script>
+     <!--核心组件-->
+     <script src="javaex/pc/js/javaex.min.js"></script>
+     <!--表单验证-->
+     <script src="javaex/pc/js/javaex-formVerify.js"></script>
+</head>
+<body>
+        <style>
+                .block{
+                    width: 800px;
+                    height: 1300px;
+                    margin-top: 120px;
+                }
+                body{
+                    background-image: url("http://img.javaex.cn/FipOsQoe90u_7i3dOVpaeX5QD7c6");
+                }
+            </style>
+            
+            <div class="list-content">
+                <!--块元素-->
+                <div class="block">
+                    <!--修饰块元素名称-->
+                    <div class="banner">
+                        <p class="tab fixed">创建比赛</p>
+                    </div>
+                    <!--正文内容-->
+                    <div class="main">
+                        <form id="form">
+                            <!--文本框-->
+                            <div class="unit clear">
+                                <div class="left"><span class="required">*</span><p class="subtitle">比赛名</p></div>
+                                <div class="right">
+                                    <input type="text" class="text" name="username"error-pos="42" placeholder="请输入比赛名"/>
+                                </div>
+                            </div>
+                            <!--文本框-->
+                            <div class="unit clear">
+                                <div class="left"><span class="required">*</span><p class="subtitle">比赛地点</p></div>
+                                <div class="right">
+                                    <input type="text" class="text" name="username"error-pos="42" placeholder="请输入比赛地点"/>
+                                </div>
+                            </div>  
+                            <!--文本框-->
+                            <div class="unit clear">
+                                    <div class="left"><span class="required">*</span><p class="subtitle">比赛时间</p></div>
+                                    <div class="right">
+                                        <input type="text" class="text" name="username"error-pos="42" placeholder="请输入比赛时间"/>
+                                    </div>
+                                </div>
+                            <!--文本框-->
+                            <div class="unit clear">
+                                <div class="left"><span class="required">*</span><p class="subtitle">最大人数</p></div>
+                                <div class="right">
+                                    <input type="text" class="text" name="username"error-pos="42" placeholder="请输入比赛最大人数"/>
+                                </div>
+                            </div>    
+                            <!--文本框-->
+                            <div class="unit clear">
+                                <div class="left"><span class="required">*</span><p class="subtitle">赛程表url</p></div>
+                                <div class="right">
+                                    <input type="text" class="text" name="username"error-pos="42" placeholder="请输入赛程表url"/>
+                                </div>
+                            </div>      
+                            <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">二阶轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">三阶轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">四阶轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">五阶轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">六阶轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">七阶轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">三单轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                                           <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">三盲轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">最少步轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">魔表轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">五魔轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">金字塔轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">斜转轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">sq1轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">四盲轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">五盲轮次</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                                                       <!--下拉选择框-->
+                            <div class="unit clear">
+                                <div class="left"><p class="subtitle">三阶多盲</p></div>
+                                <div class="right">
+                                    <select id="select">
+                                        <option value="0">不开放</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div> 
+                            </div>  
+                            <!--提交按钮-->
+                            <div class="unit clear" style="width: 800px;">
+                                <div style="text-align: center;">
+                                    <!--表单提交时，必须是input元素，并指定type类型为button，否则ajax提交时，会返回error回调函数-->
+                                    <input type="button" id="save" class="button yes" value="创建比赛" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>            
+</body>
+</html>

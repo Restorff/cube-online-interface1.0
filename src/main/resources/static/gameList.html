@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心</title>
+    <!--字体图标-->
+    <link href="javaex/pc/css/icomoon.css" rel="stylesheet" />
+    <!--动画-->
+    <link href="javaex/pc/css/animate.css" rel="stylesheet" />
+    <!--骨架样式-->
+    <link href="javaex/pc/css/common.css" rel="stylesheet" />
+    <!--皮肤（缇娜）-->
+    <link href="javaex/pc/css/skin/tina.css" rel="stylesheet" />
+    <!--jquery，不可修改版本-->
+    <script src="javaex/pc/lib/jquery-1.7.2.min.js"></script>
+    <!--全局动态修改-->
+    <script src="javaex/pc/js/common.js"></script>
+    <!--核心组件-->
+    <script src="javaex/pc/js/javaex.min.js"></script>
+    <!--表单验证-->
+    <script src="javaex/pc/js/javaex-formVerify.js"></script>
+</head>
+<style>
+        .logo_image{
+            width: 93.84px;
+            height: 64px;
+            margin-left: 5px;
+        }
+        .logo_name{
+            margin-left: 20px;
+        }
+        body{
+            background-image: url(http://img.javaex.cn/FipOsQoe90u_7i3dOVpaeX5QD7c6)
+        }
+        .main{
+            width: 400px;
+            height: 500px;
+            margin: auto;
+            border: 5px solid white;
+            background-color: #fff;
+            margin-top: 70px;
+            display: flex;
+            flex-flow: column;
+        }
+        .logo{
+            flex: 2;
+            display: flex;
+        }
+        .admin_logo{
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+        }
+        .admin_name{
+            flex: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo_name{
+            font-size: 30px;
+            font-weight:500;
+        }
+    
+        .contestant,.register{
+            flex: 2;
+            border-bottom: 0;
+            display: flex;
+        }
+        .admin_login,.contestant_login,.contestant_login{
+            margin-top: 50px;
+            width: 300px;
+            height: 50px;
+            margin: auto;
+            font-size:20px;
+        }
+        .admin{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+    
+    </script>
+    <body>
+    <div class="main">
+        <div class="logo">
+            <div class="admin_logo"><img class="logo_image" src="https://ae01.alicdn.com/kf/H582410e2afca4e89a0ab646fb739786bH.png"/>
+            </div>
+            <div class="admin_name"><span class="logo_name">CubeOnline<br>魔方比赛系统</span>
+            </div>
+        </div>
+        <div class="admin">
+            请选择要操作的比赛
+        </div>
+        <div class="contestant">
+            <button class="button navy radius-8 contestant_login" onclick=location.href='backstageIndex.html'>2018新生赛</button>
+        </div>
+        <div class="register">
+            <button class="button indigo radius-8 contestant_login" >2019新生赛</button>
+        </div>
+        <div class="register">
+            <button class="button blue radius-8 contestant_login" >2020新生赛</button>
+        </div>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人成绩</title>
+    <!--字体图标-->
+    <link href="javaex/pc/css/icomoon.css" rel="stylesheet" />
+    <!--动画-->
+    <link href="javaex/pc/css/animate.css" rel="stylesheet" />
+    <!--骨架样式-->
+    <link href="javaex/pc/css/common.css" rel="stylesheet" />
+    <!--皮肤（缇娜）-->
+    <link href="javaex/pc/css/skin/tina.css" rel="stylesheet" />
+    <!--jquery，不可修改版本-->
+    <script src="javaex/pc/lib/jquery-1.7.2.min.js"></script>
+    <!--全局动态修改-->
+    <script src="javaex/pc/js/common.js"></script>
+    <!--核心组件-->
+    <script src="javaex/pc/js/javaex.min.js"></script>
+    <!--表单验证-->
+    <script src="javaex/pc/js/javaex-formVerify.js"></script>
+</head>
+<style>
+    .logo_image{
+            width: 93.84px;
+            height: 64px;
+            margin-left: 5px;
+        }
+        .logo_name{
+            margin-left: 20px;
+        }
+        .logo{
+            flex: 2;
+            display: flex;
+        }
+        .admin_logo{
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+        }
+        .admin_name{
+            flex: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo_name{
+            font-size: 30px;
+            font-weight:500;
+        }
+</style>
+<body>
+ <!--主体内容-->
+<div class="logo">
+    <div class="admin_logo"><img class="logo_image" src="https://ae01.alicdn.com/kf/H582410e2afca4e89a0ab646fb739786bH.png"/>
+    </div>
+    <div class="admin_name"><span class="logo_name">CubeOnline 魔方比赛系统</span>
+    </div>
+</div>
+<div class="list-content">
+        <!--块元素-->
+        <div class="block">
+            <!--页面有多个表格时，可以用于标识表格-->
+            <h2>个人成绩</h2>
+            <!--右上角的返回按钮-->
+            <a href="javascript:history.back();">
+                <button class="button indigo radius-3" style="position: absolute;right: 20px;top: 16px;"><span class="icon-arrow_back"></span> 返回</button>
+            </a>
+            
+            <!--正文内容-->
+            <div class="main">
+                <select id="liandong1">
+                        <option value="">请选择项目</option>
+                        <option value="1">三阶</option>
+                        <option value="2">二阶</option>
+                    </select>
+                    <select id="liandong2">
+                            
+                    </select>
+                    
+                    <script>
+                        javaex.select({
+                            id : "liandong1",
+                            // 回调函数
+                            callback: function (rtn) {
+                                console.log("selectValue:" + rtn.selectValue);
+                                console.log("selectName:" + rtn.selectName);
+                                
+                                var html = '';
+                                if (rtn.selectValue=="1") {
+                                    html += '<option value="WX">请选择轮次</option>';
+                                    html += '<option value="WX">1</option>';
+                                    html += '<option value="NJ">2</option>';
+                                    html += '<option value="NJ">3</option>';
+                                } else if (rtn.selectValue=="2") {
+                                    html += '<option value="WX">请选择轮次</option>';
+                                    html += '<option value="HF">1</option>';
+                                    html += '<option value="HN">2</option>';
+                                }
+                    
+                                $("#liandong2").empty();
+                                $("#liandong2").append(html);
+                                
+                                javaex.select({
+                                    id : "liandong2",
+                                    // 回调函数
+                                    callback: function (rtn) {
+                                        console.log("selectValue:" + rtn.selectValue);
+                                        console.log("selectName:" + rtn.selectName);
+                                    }
+                                });
+                            }
+                        });
+                    
+                        javaex.select({
+                            id : "liandong2"
+                        });
+                    </script>
+                <!--表格上方的操作元素，添加、删除等-->
+        
+                <table id="table" class="table color2" style="margin-top: 10px">
+                    <thead>
+                        <tr>
+                            <th>排名</th>
+                            <th>id</th>
+                            <th>选手</th>
+                            <th>最好</th>
+                            <th>平均</th>
+                            <th>详情1</th>
+                            <th>详情2</th>
+                            <th>详情3</th>
+                            <th>详情4</th>
+                            <th>详情5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>12</td>
+                            <td>廖涛</td>
+                            <td>14</td>
+                            <td>14</td>
+                            <td>14</td>
+                            <td>14</td>
+                            <td>14</td>
+                            <td>14</td>
+                            <td>14</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

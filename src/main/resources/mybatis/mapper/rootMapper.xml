@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lstf666.cube.mapper.RootMapper">
+    <!--创建比赛-->
+    <insert id="makeGame" parameterType="competition">
+        insert into competition values (null,#{name},#{time},#{location},#{maxNum},
+        #{nowNum},#{e222},#{e333},#{e444},#{e555},
+        #{e666},#{e777},#{e333bf},#{e333oh},#{e333fm},
+        #{eclock},#{eminx},#{epyram},#{eskewb},#{esq1},#{e444bf},
+        #{e555bf},#{e333mbf},#{schedule});
+    </insert>
+    <!--激活管理员-->
+    <update id="activeAdmin">
+        update admin set status = 'y' where aId = #{aId};
+    </update>
+    <!--根据code查询管理员-->
+    <select id="queryAdminByCode" resultType="cn.lstf666.cube.model.Admin" parameterType="String">
+        select * from admin where code = #{code};
+    </select>
+</mapper>

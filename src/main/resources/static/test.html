@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加选手</title>
+    <!--字体图标-->
+    <link href="javaex/pc/css/icomoon.css" rel="stylesheet" />
+    <!--动画-->
+    <link href="javaex/pc/css/animate.css" rel="stylesheet" />
+    <!--骨架样式-->
+    <link href="javaex/pc/css/common.css" rel="stylesheet" />
+    <!--皮肤（缇娜）-->
+    <link href="javaex/pc/css/skin/tina.css" rel="stylesheet" />
+    <!--jquery，不可修改版本-->
+    <script src="javaex/pc/lib/jquery-1.7.2.min.js"></script>
+    <!--全局动态修改-->
+    <script src="javaex/pc/js/common.js"></script>
+    <!--核心组件-->
+    <script src="javaex/pc/js/javaex.min.js"></script>
+    <!--表单验证-->
+    <script src="javaex/pc/js/javaex-formVerify.js"></script>
+</head>
+<style>
+    input {
+        padding: 5px;
+        margin: 5px;
+    }
+    
+    body {
+        margin-bottom: 100px;
+        padding-bottom: 100px;
+    }
+</style>
+<script>
+    $(function() {
+        $(".button").click(function() {
+            $.each($(".t"), function() {
+                if ($(this).val() === 'DNF' || $(this).val() === 'dnf') {
+                    $(this).val(67373);
+                }
+            });
+            var cid = $("#id").val();
+            if (cid == '') {
+                cid = 0;
+            }
+            //非空检验
+            if (cid == '' && $("#name").val() == '') {
+                alert("请输入选手id或姓名");
+                return;
+            }
+            if ($("#t1").val() == '' || $("#t2").val() == '' || $("#t3").val() == '' || $("#t4").val() == '' || $("#t5").val() == '') {
+                alert("请输入五次成绩");
+                return;
+            }
+            //成绩非字符检验
+            if (isNaN($("#t1").val()) || isNaN($("#t2").val()) || isNaN($("#t3").val()) || isNaN($("#t4").val()) || isNaN($("#t5").val())) {
+                alert("请输入有效的成绩");
+                return;
+            }
+            $.ajax({
+                url: 'contestant/save222',
+                data: '{"cid":' + cid + ',"name":"' + $("#name").val() + '","rounds":${rounds},"event":${event},"t1":' + $("#t1").val() + ',"t2":' + $("#t2").val() + ',"t3":' + $("#t3").val() + ',"t4":' + $("#t4").val() + ',"t5":' + $("#t5").val() + '}',
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json;charset=utf-8',
+                success: function(res) {
+                    if (res.type == 'success') {
+                        location.reload();
+                        parent.javaex.close();
+                        parent.window.location.reload();
+                    } else {
+                        alert(res.msg)
+                    }
+                }
+            })
+        })
+    })
+</script>
+
+<body>
+    <input type="text" class="text" name="id" id="id" placeholder="选手id" autocomplete="off" />
+    <input type="text" class="text" name="name" id="name" placeholder="请输入选手姓名" autocomplete="off" />(id和姓名输入一项即可)
+    <br>
+    <input type="text" class="text t" name="t1" id="t1" placeholder="请输入成绩" autocomplete="off" />
+    <input type="text" class="text t" name="t2" id="t2" placeholder="请输入成绩" autocomplete="off" />
+    <input type="text" class="text t" name="t3" id="t3" placeholder="请输入成绩" autocomplete="off" />
+    <input type="text" class="text t" name="t4" id="t4" placeholder="请输入成绩" autocomplete="off" />
+    <input type="text" class="text t" name="t5" id="t5" placeholder="请输入成绩" autocomplete="off" />
+    <br>
+    <button class="button green" style="margin-left: 10px">提交</button>
+    <!-- 1309 169 -->
+</body>
+
+</html>
